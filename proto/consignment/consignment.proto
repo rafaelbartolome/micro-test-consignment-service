@@ -4,10 +4,10 @@ syntax = "proto3";
 package go.micro.srv.consignment; 
 
 service ShippingService {
-  rpc CreateConsignment(Consignment) returns (Response) {}
+  rpc Create(Consignment) returns (Response) {}
 
     // Created a new method
-  rpc GetConsignments(GetRequest) returns (Response) {}
+  rpc Get(GetRequest) returns (Response) {}
 }
 
 message Consignment {

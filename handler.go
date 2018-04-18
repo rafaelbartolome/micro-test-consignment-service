@@ -5,8 +5,8 @@ package main
 import (
 	"log"
 
-	pb "github.com/rafaelbartolome/micro-test/consignment-service/proto/consignment"
-	vesselProto "github.com/rafaelbartolome/micro-test/vessel-service/proto/vessel"
+	pb "github.com/rafaelbartolome/micro-test-consignment-service/proto/consignment"
+	vesselProto "github.com/rafaelbartolome/micro-test-vessel-service/proto/vessel"
 	"golang.org/x/net/context"
 	"gopkg.in/mgo.v2"
 )

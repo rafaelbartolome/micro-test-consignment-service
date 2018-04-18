@@ -2,7 +2,7 @@
 package main
 
 import (
-	pb "github.com/rafaelbartolome/micro-test/consignment-service/proto/consignment"
+	pb "github.com/rafaelbartolome/micro-test-consignment-service/proto/consignment"
 	"gopkg.in/mgo.v2"
 )
 

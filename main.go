@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"log"
 
-	vesselProto "github.com/rafaelbartolome/micro-test/vessel-service/proto/vessel"
+	vesselProto "github.com/rafaelbartolome/micro-test-vessel-service/proto/vessel"
 
-	pb "github.com/rafaelbartolome/micro-test/consignment-service/proto/consignment"
+	pb "github.com/rafaelbartolome/micro-test-consignment-service/proto/consignment"
 
 	"os"
 

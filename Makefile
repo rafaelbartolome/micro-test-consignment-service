@@ -7,7 +7,7 @@ build:
 	#protoc -I. --go_out=plugins=micro:$(GOPATH)/src/github.com/rafaelbartolome/micro-test/consignment-service \
 		--micro_out=plugins=micro:$(GOPATH)/src/github.com/rafaelbartolome/micro-test/consignment-service \
 		proto/consignment/consignment.proto
-	protoc -I. --go_out=plugins=micro:$(GOPATH)/src/github.com/rafaelbartolome/micro-test/consignment-service \
+	protoc -I. --go_out=plugins=micro:$(GOPATH)/src/github.com/rafaelbartolome/micro-test-consignment-service \
 		proto/consignment/consignment.proto
 
 	# generate docker image
