@@ -36,7 +36,7 @@ WORKDIR /app
 # we pull the binary from the container named `builder`, within
 # this build context. This reaches into our previous image, finds
 # the binary we built, and pulls it into this container. Amazing!
-COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-service/consignment-service .
+COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-service .
 
 # Run the binary as per usual! This time with a binary build in a
 # separate container, with all of the correct dependencies and
