@@ -6,7 +6,7 @@
 FROM golang:1.9.0 as builder
 
 # Set our workdir to our current service in the gopath
-WORKDIR /go/src/github.com/rafaelbartolome-micro-test/consignment-service
+WORKDIR /go/src/github.com/rafaelbartolome/micro-test-consignment-service
 
 # Copy the current code into our workdir
 COPY . .
@@ -41,4 +41,4 @@ COPY --from=builder /go/src/github.com/rafaelbartolome/micro-test-consignment-se
 # Run the binary as per usual! This time with a binary build in a
 # separate container, with all of the correct dependencies and
 # run time libraries.
-CMD ["./consignment-service"]
+CMD ["./micro-test-consignment-service"]
