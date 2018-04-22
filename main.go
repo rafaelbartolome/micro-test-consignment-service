@@ -3,20 +3,29 @@ package main
 
 import (
 	// Import the generated protobuf code
+	"errors"
 	"fmt"
 	"log"
 
-	vesselProto "github.com/rafaelbartolome/micro-test-vessel-service/proto/vessel"
+	"golang.org/x/net/context"
 
 	pb "github.com/rafaelbartolome/micro-test-consignment-service/proto/consignment"
+	userService "github.com/rafaelbartolome/micro-test-user-service/proto/user"
+	vesselProto "github.com/rafaelbartolome/micro-test-vessel-service/proto/vessel"
 
 	"os"
 
 	micro "github.com/micro/go-micro"
+	"github.com/micro/go-micro/metadata"
+	"github.com/micro/go-micro/server"
 )
 
 const (
 	defaultHost = "localhost:27017"
+)
+
+var (
+	srv micro.Service
 )
 
 func main() {
@@ -83,7 +92,7 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 		log.Println("Authenticating with token: ", token)
 
 		// Auth here
-		authClient := userService.NewUserServiceClient("go.micro.srv.user", client.DefaultClient)
+		authClient := userService.NewUserServiceClient("go.micro.srv.user", srv.Client())
 		_, err := authClient.ValidateToken(context.Background(), &userService.Token{
 			Token: token,
 		})
