@@ -16,6 +16,7 @@ import (
 	"os"
 
 	micro "github.com/micro/go-micro"
+	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/metadata"
 	"github.com/micro/go-micro/server"
 )
@@ -92,7 +93,8 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 		log.Println("Authenticating with token: ", token)
 
 		// Auth here
-		authClient := userService.NewUserServiceClient("go.micro.srv.user", srv.Client())
+		//authClient := userService.NewUserServiceClient("go.micro.srv.user", srv.Client())
+		authClient := userService.NewUserServiceClient("go.micro.srv.user", microclient.DefaultClient)
 		log.Println("NewUserServiceClient")
 		_, err := authClient.ValidateToken(context.Background(), &userService.Token{
 			Token: token,
