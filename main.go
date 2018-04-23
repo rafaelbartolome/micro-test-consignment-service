@@ -97,8 +97,11 @@ func AuthWrapper(fn server.HandlerFunc) server.HandlerFunc {
 			Token: token,
 		})
 		if err != nil {
+			log.Println("Authenticating failed!!")
 			return err
 		}
+
+		log.Println("Authenticating ok")
 		err = fn(ctx, req, resp)
 		return err
 	}
